@@ -13,6 +13,8 @@ def getMIDI(DeviceName):
     midi_in = mido.open_input(DeviceName)
     for msg in midi_in.iter_pending():
         if msg.type == 'note_on':
-            frequency = midi_to_frequency(msg.note)
-    return frequency
-print(getMIDI('foo'))
+            foo = midi_to_frequency(msg.note)
+            output(True, foo)
+        else:
+            output(False, None)
+    return output
