@@ -3,15 +3,11 @@ import numpy as np
 import os
 
 # MIDI to frequency conversion function
-def midi_to_frequency(note_number):
+def midi_to_frequency(note_number:int):
     return 440.0 * (2 ** ((note_number - 69) / 12.0))
 
-def ChooseMIDI(MIDI_framework):
-    #set Midi framework
+def ChooseMIDI(MIDI_framework:str="rtmidi"):
 
-    if MIDI_framework == None:
-        #rtmidi should work everywhere
-        MIDI_framework = 'rtmidi'
     mido.set_backend(MIDI_framework)
     while True:
         os.system('clear')
@@ -36,7 +32,7 @@ def ChooseMIDI(MIDI_framework):
             print('Please input valid integer')
             continue
 
-def getMIDI(DeviceName):
+def getMIDI(DeviceName:str):
 
     # Set up MIDI input
     midi_in = mido.open_input(DeviceName)
