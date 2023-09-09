@@ -5,6 +5,7 @@
  - Write a README
  - Make an interface for sounddevice and librosa to work together
  - Create an GUI
+ - Add a way for MIDIn to tell if a key is released (Koodarimpi)
  ### FIXMEs:
  Nothing here :)
 
